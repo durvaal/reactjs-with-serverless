@@ -1,0 +1,15 @@
+service: react-app
+
+provider:
+  name: aws
+  profile: ${opt:profile, 'paulo'}
+  stage: ${opt:stage, 'dev'}
+  region: ${opt:region, 'us-east-1'}
+
+constructs:
+  landing:
+    type: static-website
+    path: build
+
+plugins:
+  - serverless-lift
